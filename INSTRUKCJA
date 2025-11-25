@@ -1,0 +1,45 @@
+--- JAK URUCHOMIĆ ---
+
+
+  Wymagania wstępne
+    Aby uruchomić projekt, na komputerze muszą być zainstalowane:
+      -Node.js (wersja 18 lub nowsza)
+      -Git
+
+1. Pobranie kodu (Repozytorium)
+    Otwórz terminal (Wiersz polecenia / PowerShell) i wpisz poniższą komendę, aby sklonować repozytorium na swój dysk:
+        git clone https://github.com/JuanPablo033/smietnisko.git
+    Następnie wejdź do folderu pobranego projektu:
+        cd smietnisko
+
+2. Instalacja bibliotek
+    Będąc w folderze projektu, uruchom komendę, która automatycznie pobierze wszystkie wymagane biblioteki (Next.js, React, Leaflet, Supabase):
+        npm install
+
+3. Konfiguracja
+    Uwaga: Projekt jest już wstępnie skonfigurowany. Klucze API do bazy danych (Supabase) zostały dołączone do kodu w celach demonstracyjnych, więc nie jest wymagana żadna dodatkowa konfiguracja plików .env.
+
+4. Uruchomienie aplikacji
+    Wpisz w terminalu komendę startową:
+        npm run dev
+    Po chwili powinieneś zobaczyć komunikat:
+        Ready in ... ms url: http://localhost:3000
+    Oznacza to, że serwer działa. Nie zamykaj tego okna terminala!
+
+5. Obsługa aplikacji (Scenariusz testowy)
+    5.1. Otwórz przeglądarkę internetową i wejdź na adres: http://localhost:3000/map
+    5.2. Logowanie:
+              - Jako gość zobaczysz mapę, ale nie możesz dodawać znaczników.
+              - Kliknij przycisk "Zaloguj się" na górnym pasku.
+              - Możesz Założyć konto (podając dowolny email i hasło - nie jest wymagane potwierdzenie maila w wersji demo) lub zalogować się danymi testowymi (jeśli zostały dostarczone).
+    5.3 Dodawanie zgłoszenia:
+              - Po zalogowaniu kliknij zielony przycisk "+ Dodaj znacznik".
+              - Na środku ekranu pojawi się pinezka – przeciągnij ją w wybrane miejsce na mapie.
+              - Kliknij "Zatwierdź lokalizację".
+              - Wypełnij formularz (Nazwa, Typ, Zdjęcie) i wyślij zgłoszenie.
+    5.4 Weryfikacja:
+              - Twój nowy znacznik pojawi się na mapie. Po kliknięciu w niego zobaczysz szczegóły i zdjęcie.\
+
+--- ROZWIĄZYWANIE PROBLEMÓW ---
+1. Błąd "Port 3000 is already in use": Oznacza to, że masz już uruchomioną inną aplikację na tym porcie. Spróbuj zamknąć inne terminale lub uruchom aplikację na innym porcie: npm run dev -- -p 3001
+2. Brak mapy (szare tło): Upewnij się, że masz połączenie z internetem (mapa ładuje kafelki z OpenStreetMap).
